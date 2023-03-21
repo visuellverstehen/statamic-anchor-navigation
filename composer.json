@@ -21,7 +21,7 @@
         },
         "laravel": {
             "providers": [
-                "Visuellverstehen\\StatamicAnchorNavigation\\ServiceProvider"
+                "VV\\AnchorNavigation\\ServiceProvider"
             ]
         }
     },
