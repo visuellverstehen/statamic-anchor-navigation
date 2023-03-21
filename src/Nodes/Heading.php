@@ -1,6 +1,6 @@
 <?php
 
-namespace Visuellverstehen\StatamicAnchorNavigation\Nodes;
+namespace VV\AnchorNavigation\Nodes;
 
 use Statamic\Support\Str;
 use Tiptap\Nodes\Heading as TipTapHeading;

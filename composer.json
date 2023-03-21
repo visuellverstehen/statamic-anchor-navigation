@@ -2,9 +2,14 @@
     "name": "visuellverstehen/statamic-anchor-navigation",
     "autoload": {
         "psr-4": {
-            "Visuellverstehen\\StatamicAnchorNavigation\\": "src"
+            "VV\\AnchorNavigation\\": "src"
         }
     },
+    "authors": [
+        {
+            "name": "visuellvertsehen"
+        }
+    ],
     "extra": {
         "statamic": {
             "name": "Statamic Anchor Headlines",
@@ -14,6 +19,14 @@
             "providers": [
                 "Visuellverstehen\\StatamicAnchorNavigation\\ServiceProvider"
             ]
+        }
+    },
+    "require": {
+        "statamic/cms": "^3.4"
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
         }
     }
 }

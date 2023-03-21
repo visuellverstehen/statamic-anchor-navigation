@@ -1,6 +1,6 @@
 <?php
 
-namespace Visuellverstehen\StatamicAnchorNavigation\Tags;
+namespace VV\AnchorNavigation\Tags;
 
 use Statamic\Facades\Config;
 use Statamic\Fieldtypes\Bard\Augmentor;

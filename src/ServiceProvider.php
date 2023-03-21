@@ -1,6 +1,6 @@
 <?php
 
-namespace Visuellverstehen\StatamicAnchorNavigation;
+namespace VV\AnchorNavigation;
 
 use Statamic\Fieldtypes\Bard\Augmentor;
 use Statamic\Providers\AddonServiceProvider;
