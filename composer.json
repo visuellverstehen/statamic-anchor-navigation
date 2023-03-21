@@ -10,6 +10,9 @@
             "name": "visuellvertsehen"
         }
     ],
+    "support": {
+        "email": "hello@visuellverstehen.de"
+    },
     "extra": {
         "statamic": {
             "name": "Statamic Anchor Headlines",
