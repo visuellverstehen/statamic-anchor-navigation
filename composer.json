@@ -1,0 +1,19 @@
+{
+    "name": "visuellverstehen/statamic-anchor-navigation",
+    "autoload": {
+        "psr-4": {
+            "Visuellverstehen\\StatamicAnchorNavigation\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Statamic Anchor Headlines",
+            "description": "Statamic Anchor Navigation addon generates a navigation from all level 2 headings from bard fieldtype."
+        },
+        "laravel": {
+            "providers": [
+                "Visuellverstehen\\StatamicAnchorNavigation\\ServiceProvider"
+            ]
+        }
+    }
+}
