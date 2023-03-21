@@ -1,5 +1,6 @@
 {
     "name": "visuellverstehen/statamic-anchor-navigation",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "VV\\AnchorNavigation\\": "src"
