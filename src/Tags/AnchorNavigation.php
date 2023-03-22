@@ -10,10 +10,10 @@ class AnchorNavigation extends Tags
 {
     protected static $handle = 'anchor_navigation';
 
-    protected string $fieldHandle;
+    protected ?string $fieldHandle;
     protected $entry;
     protected Augmentor $augmentor;
-    protected array $value;
+    protected ?array $value;
 
     /*
      * In order to generate an anchor navigation
