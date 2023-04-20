@@ -29,7 +29,7 @@
         }
     },
     "require": {
-        "statamic/cms": "^3.4 || ^4.0"
+        "statamic/cms": "^3.4 || ^4.0 || ^4.0@alpha || ^4.0@beta || ^4.0@RC"
     },
     "config": {
         "allow-plugins": {
