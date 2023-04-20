@@ -9,7 +9,7 @@ A Statamic addon that provides a custom tag for creating an anchor nav for all h
 
 ## How to install
 
-You can search for this addon in the `Tools > Addons` section of the Statamic control panel and click **install**, or run the following command from your project root:
+Run the following command from your project root:
 
 ``` bash
 composer require visuellverstehen/statamic-anchor-navigation
@@ -26,6 +26,14 @@ Include the `{{ anchor_navigation }}` tag in your template and supply the field 
         </li>
     {{ /anchor_navigation }}
 </ul>
+```
+
+You can get the amount of headings found within the content with the `count` tag:
+
+```
+{{ if {anchor_navigation:count from="bard"} > 0 }}
+    ...
+{{ /if }}
 ```
 
 ## Configurations

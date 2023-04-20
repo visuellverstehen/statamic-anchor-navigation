@@ -39,6 +39,13 @@ class AnchorNavigation extends Tags
 
         return self::collectHeadings();
     }
+    
+    public function count(): int
+    {
+        $headings = self::index() ?? [];
+            
+        return count($headings);
+    }
 
     private function defineAugmentor(): Augmentor
     {
