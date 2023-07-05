@@ -31,7 +31,7 @@ class AnchorNavigation extends Tags
             return null;
         }
 
-        if (! $this->value = $this->entry->get($this->fieldHandle)) {
+        if (! $this->value = $this->entry->value($this->fieldHandle)) {
             return null;
         }
 
