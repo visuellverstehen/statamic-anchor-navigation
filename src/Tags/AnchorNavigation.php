@@ -35,14 +35,14 @@ class AnchorNavigation extends Tags
             return null;
         }
 
-        $this->augmentor = self::defineAugmentor();
+        $this->augmentor = $this->defineAugmentor();
 
-        return self::collectHeadings();
+        return $this->collectHeadings();
     }
     
     public function count(): int
     {
-        $headings = self::index() ?? [];
+        $headings = $this->index() ?? [];
             
         return count($headings);
     }
@@ -79,19 +79,19 @@ class AnchorNavigation extends Tags
                     return [];
                 }
 
-                if (! in_array($item['attrs']['level'], self::allowedHeadingLevels())) {
+                if (! in_array($item['attrs']['level'], $this->allowedHeadingLevels())) {
                     return [];
                 }
 
                 $htmlHeading = $this->augmentor->convertToHtml([$item]);
 
-                if (! $id = self::getId($htmlHeading)) {
+                if (! $id = $this->getId($htmlHeading)) {
                     return [];
                 }
 
                 return [
                     'id' => $id,
-                    'headline' => self::sanitize($item['content'][0]['text']),
+                    'headline' => $this->sanitize($item['content'][0]['text']),
                     'level' => $item['attrs']['level'],
                 ];
             })
