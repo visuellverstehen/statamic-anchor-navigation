@@ -57,12 +57,12 @@ class AnchorNavigation extends Tags
         return new Augmentor($bard);
     }
 
-    private function allowedHeadingLevels(): array
+    protected function allowedHeadingLevels(): array
     {
         return config('anchor-navigation.heading.levels', []);
     }
 
-    private function getId(string $html): ?string
+    protected function getId(string $html): ?string
     {
         if (preg_match('/id="([^"]+)"/', $html, $matches)) {
             return $matches[1];
@@ -71,7 +71,7 @@ class AnchorNavigation extends Tags
         return null;
     }
 
-    private function collectHeadings(): array
+    protected function collectHeadings(): array
     {
         return collect($this->value)
             ->map(function ($item) {
@@ -103,7 +103,7 @@ class AnchorNavigation extends Tags
      * This logic has been taken right out of the Statamic cores 'sanitize'-modifier.
      * @see vendor/statamic/cms/src/Support/Html.php
      */
-    private function sanitize($string): string
+    protected function sanitize($string): string
     {
         return htmlspecialchars($string, ENT_QUOTES, Config::get('statamic.system.charset', 'UTF-8'));
     }
