@@ -27,7 +27,7 @@ class AnchorNavigation extends Tags
             return null;
         }
 
-        if (! $this->entry = $this->context->get('id')->augmentable()) {
+        if (! $this->entry = $this->context->get('id')?->augmentable()) {
             return null;
         }
 
