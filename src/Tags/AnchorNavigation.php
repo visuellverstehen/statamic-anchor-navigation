@@ -114,7 +114,7 @@ class AnchorNavigation extends Tags
      * This method makes it possible to create an Anchor navigation not only
      * from the current context, but also by passing another entry.
      */
-    private function getEntry(): ? Entry
+    private function getEntry(): ?Entry
     {
         return $this->params->get('entry')
             ? $this->params->get('entry')
