@@ -2,6 +2,7 @@
 
 namespace VV\AnchorNavigation\Tags;
 
+use Statamic\Entries\Entry;
 use Statamic\Facades\Config;
 use Statamic\Fieldtypes\Bard\Augmentor;
 use Statamic\Tags\Tags;
@@ -19,7 +20,7 @@ class AnchorNavigation extends Tags
      * In order to generate an anchor navigation
      * you need to provide the field handle for a bard field.
      *
-     * {{ anchor_navigation from="handle" }}
+     * {{ anchor_navigation from="handle" entry="entry" }}
      */
     public function index(): ?array
     {
@@ -27,7 +28,7 @@ class AnchorNavigation extends Tags
             return null;
         }
 
-        if (! $this->entry = $this->context->get('id')?->augmentable()) {
+        if (! $this->entry = $this->getEntry()) {
             return null;
         }
 
@@ -106,5 +107,17 @@ class AnchorNavigation extends Tags
     protected function sanitize($string): string
     {
         return htmlspecialchars($string, ENT_QUOTES, Config::get('statamic.system.charset', 'UTF-8'));
+    }
+
+
+    /**
+     * This method makes it possible to create an Anchor navigation not only
+     * from the current context, but also by passing another entry.
+     */
+    private function getEntry(): ?Entry
+    {
+        return $this->params->get('entry')
+            ? $this->params->get('entry')
+            : $this->context->get('id')?->augmentable();
     }
 }
