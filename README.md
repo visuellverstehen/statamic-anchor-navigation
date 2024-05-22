@@ -28,6 +28,18 @@ Include the `{{ anchor_navigation }}` tag in your template and supply the field 
 </ul>
 ```
 
+You also specify the entry from which you want to render the anchor navigation.
+```
+<ul>
+    {{ anchor_navigation from="bard" :entry="specific_entry" }}
+        <li>
+            <a href="#{{ id }}">{{ headline }}</a>
+        </li>
+    {{ /anchor_navigation }}
+</ul>
+```
+
+
 You can get the amount of headings found within the content with the `count` tag:
 
 ```
