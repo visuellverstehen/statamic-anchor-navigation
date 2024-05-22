@@ -2,7 +2,8 @@
 
 namespace VV\AnchorNavigation\Tags;
 
-use Statamic\Entries\Entry;
+use Statamic\Entries\Entry as EntryFacade;
+use Statamic\Contracts\Entries\Entry;
 use Statamic\Facades\Config;
 use Statamic\Fieldtypes\Bard\Augmentor;
 use Statamic\Tags\Tags;
@@ -116,8 +117,14 @@ class AnchorNavigation extends Tags
      */
     private function getEntry(): ?Entry
     {
-        return $this->params->get('entry')
-            ? $this->params->get('entry')
-            : $this->context->get('id')?->augmentable();
+        if ($entry = $this->params->get('entry')) {
+            return $entry;
+        }
+
+        if (!$currentEntryId = $this->context->raw('id')) {
+            return null;
+        }
+
+        return EntryFacade::find($currentEntryId);
     }
 }
