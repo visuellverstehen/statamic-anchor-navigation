@@ -19,7 +19,7 @@ class Heading extends TipTapHeading
         // Add slugified id to specific headlines.
         if (in_array($node->attrs->level, config('anchor-navigation.heading.levels', []))) {
 
-            if (property_exists($node->content[0], 'text') && !is_null($node->content[0]->text)) {
+            if (property_exists($node, 'content') && property_exists($node->content[0], 'text') && !is_null($node->content[0]->text)) {
                 $HTMLAttributes['id'] = Str::slug($node->content[0]->text);
             }
         }
